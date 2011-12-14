@@ -105,6 +105,9 @@ $(document).ready(function() {
 
     var result = _.union([1, 2, 3], [2, 30, 1], [1, 40, [1]]);
     equals(result.join(' '), '1 2 3 30 40 1', 'takes the union of a list of nested arrays');
+
+    var result = _.union([1, 2, 3], [2, 30, 1], null);
+    equals(result.join(' '), '1 2 3 30', 'takes the union of a list of arrays and ignores falsy arguments');
   });
 
   test("arrays: difference", function() {
